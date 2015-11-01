@@ -237,6 +237,9 @@ Esercizio 8
 Dato un array contenente n^2 elementi, scrivere un algoritmo che permetta di inserire tutti gli
 oggetti in un array bidimensionale n x n.
 */
+
+// Spazio: O(n^2) 
+// Tempo: O(n^2)
 function ex_8_I(array)
 {
     var c=0;
