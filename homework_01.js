@@ -185,6 +185,8 @@ Si calcoli la divisione e il resto della divisione tra due numeri a, b maggiori 
 l’utilizzo dei soli operatori somma e sottrazione.
 */
 
+// Spazio: O(1) 
+// Tempo: O(n)
 function ex_6_I(a,b)
 {
     var quoziente=0;
@@ -196,6 +198,8 @@ function ex_6_I(a,b)
     console.log(quoziente+' resto '+a);
 }
 
+// Spazio: O(n) 
+// Tempo: O(n)
 function ex_6_R(a,b)
 {
     if(a<b)
@@ -205,4 +209,96 @@ function ex_6_R(a,b)
     }
     else
         return 1+ex_6_R(a-b,b);
+}
+
+/*
+Esercizio 7
+
+Si calcoli la potenza (x^y) di due numeri x y maggiori o uguali a zero, tramite l’utilizzo dei soli
+
+operatori somma, sottrazione e della funzione mult.
+*/
+
+// Spazio: O(1) 
+// Tempo: O(n)
+function ex_7_I(a,b)
+{
+    var potenza=1;
+    for(i=0;i<b;i++)
+    {
+        potenza=potenza*a;
+    }
+    return potenza;
+}
+
+// Spazio: O(n) 
+// Tempo: O(n)
+function ex_7_R(a,b)
+{
+    if(b>1)   
+        return a*ex_7_R(a,b-1);
+    else return a;
+}
+
+/*
+Esercizio 9
+
+Dato una lista di elementi, scrivere un algoritmo che permetta di invertire l’ordine degli
+
+elementi.
+*/
+
+function ex_9_I(array)
+{
+    var j=0;
+    var ris=array.slice();
+    for(i=array.length-1;i>=0;i--)
+    {
+        ris[j]=array[i];
+        j++;
+    }
+    return ris;
+}
+
+function ex_9_R(array)
+{
+    var ris=[];
+    if(array.length<=0)
+        return ris;
+    else
+    {
+        ris.push(array[0]);
+        array=array.slice(1);
+        return ex_9_R(array);
+    }
+}
+
+/*
+Esercizio 10
+
+Dati due interi a, n maggiori di 0, scrivere un algoritmo che crea un lista di n elementi
+
+contenenti a.
+*/
+
+function ex_10_I(a,n)
+{
+    array=[];
+    for(i=0;i<n;i++)
+    {
+        array[i]=a;
+    }
+    return array;
+}
+
+function ex_10_R(a,n)
+{
+    array=[];
+    if(n==0)
+        return array;
+    else
+    {
+        array.push(a);
+        return ex_10_R(a,n--);
+    }
 }
