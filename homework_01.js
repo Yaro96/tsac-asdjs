@@ -70,11 +70,11 @@ function firstOddR(n) {
 
 // Per Tiziano.
 function ex_2_I(x) {
-    return sumwhileneg(x);
+    return firstOdd(x);
 }
 
 function ex_2_R(x) {
-    return sumwhilenegR(x);
+    return firstOddR(x);
 }
 
 /*
