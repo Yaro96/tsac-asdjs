@@ -34,11 +34,11 @@ function sumwhilenegR(myarray) {
 
 // Per Tiziano.
 function ex_1_I(myarray) {
-    sumwhileneg(myarray);
+    return sumwhileneg(myarray);
 }
 
 function ex_1_R(myarray) {
-    sumwhilenegR(myarray);
+    return sumwhilenegR(myarray);
 }
 
 /*
@@ -70,11 +70,11 @@ function firstOddR(n) {
 
 // Per Tiziano.
 function ex_2_I(x) {
-    sumwhileneg(x);
+    return sumwhileneg(x);
 }
 
 function ex_2_R(x) {
-    sumwhilenegR(x);
+    return sumwhilenegR(x);
 }
 
 /*
