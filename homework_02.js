@@ -61,40 +61,20 @@ calcolare la somma nell’intervallo [b,a]*/
 
 function ex_4_F(a,b)
 {
-
-}
-
-function ex_4_I(a,b)
-{
     if(a>b)
     {
         c=a;
         a=b;
         b=c;
     }
-    var somma=0;
-    for(i=a;i<=b;i++)
+    var j=b;
+    var array=[];
+    for(i=0;a<=b;i++)
     {
-        somma=somma+i;
+        array[i]=a;
+        a++;
     }
-    return somma;
-}
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_4_R(a,b)
-{
-    if(a==b)
-        return a;
-    
-    if(a>b)
-    {
-        c=a;
-        a=b;
-        b=c;
-    }
-
-    return a+ex_4_R(a+1,b)
+    return array.reduce(function(a,x){return a+x;},0);
 }
 
 /*
@@ -103,26 +83,14 @@ Si calcoli il prodotto di due numeri a, b maggiori o uguali a zero, tramite l’
 operatore somma.
 */
 
-// Spazio: O(1) 
-// Tempo: O(n)
-function ex_5_I(a,b)
+function ex_5_F(a,b)
 {
-    var prodotto=0;
+    var array=[];
     for(i=0;i<b;i++)
     {
-        prodotto=prodotto+a;
+        array[i]=a;
     }
-    return prodotto;
-}
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_5_R(a,b)
-{
-    if(b==0)
-        return 0;
-    else
-        return a+ex_5_R(a,b-1);
+    return array.reduce(function(a,x){return a+x},0);
 }
 
 /*
@@ -131,30 +99,22 @@ Si calcoli la divisione e il resto della divisione tra due numeri a, b maggiori 
 l’utilizzo dei soli operatori somma e sottrazione.
 */
 
-// Spazio: O(1) 
-// Tempo: O(n)
-function ex_6_I(a,b)
-{
-    var quoziente=0;
-    while(a>=b)
-    {
-        a=a-b;
-        quoziente++;
-    }
-    console.log(quoziente+' resto '+a);
-}
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_6_R(a,b)
+function ex_6_F(a,b)
 {
     if(a<b)
-    {
-        console.log('resto '+a);
-        return 0;
-    }
+        return [0,b];
     else
-        return 1+ex_6_R(a-b,b);
+    {
+        var array=[];
+        var A=a;
+        var B=b;
+        for(i=0;a>=b;i++)
+       {
+            array[i]=b;
+            a-=b;
+       }
+        return [array.length,a];
+    }
 }
 
 /*
@@ -163,25 +123,14 @@ Si calcoli la potenza (x^y) di due numeri x y maggiori o uguali a zero, tramite 
 operatori somma, sottrazione e della funzione mult.
 */
 
-// Spazio: O(1) 
-// Tempo: O(n)
-function ex_7_I(a,b)
+function ex_7_F(a,b)
 {
-    var potenza=1;
+    var array=[];
     for(i=0;i<b;i++)
     {
-        potenza=potenza*a;
+        array[i]=a;
     }
-    return potenza;
-}
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_7_R(a,b)
-{
-    if(b>1)   
-        return a*ex_7_R(a,b-1);
-    else return a;
+    return array.reduce(function(a,x){return a*x},1); 
 }
 
 /*
@@ -220,42 +169,10 @@ Dato una lista di elementi, scrivere un algoritmo che permetta di invertire l’
 elementi.
 */
 
-// Spazio: O(1) 
-// Tempo: O(n)
-function ex_9_I(array)
+function ex_9_F(array)
 {
-    var j=0;
-    var ris=array.slice();
-    for(i=array.length-1;i>=0;i--)
-    {
-        ris[j]=array[i];
-        j++;
-    }
-    return ris;
+    return array.reverse();
 }
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_9_R(array)
-{
-    var i=0;
-    var j=array.length-1;
-    return inverti(array,i,j);
-}
-
-function inverti(array,i,j)
-{
-    if(i<j)
-    {
-        tmp=array[i];
-        array[i]=array[j];
-        array[j]=tmp;
-        return inverti(array,i+1,j-1);
-    }else
-        return array;
-}
-
-
 
 /*
 Esercizio 10
@@ -263,8 +180,25 @@ Dati due interi a, n maggiori di 0, scrivere un algoritmo che crea un lista di n
 contenenti a.
 */
 
-// Spazio: O(1) 
-// Tempo: O(n)
+function ex_10_F(a,n)
+{
+    var array=[0];
+    var i=0;
+     array.forEach(
+        function(x)
+        {
+            if(i<n)
+            {
+                x=a;
+                i++;
+                array[i]=0;
+            }
+            return x;
+        }
+    )
+    return array;
+}
+
 function ex_10_I(a,n)
 {
     array=[];
