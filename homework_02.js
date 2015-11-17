@@ -182,50 +182,20 @@ contenenti a.
 
 function ex_10_F(a,n)
 {
-    var array=[0];
-    var i=0;
+    /*var i=0;
      array.forEach(
         function(x)
         {
             if(i<n)
             {
-                x=a;
+                array.push(a);
                 i++;
-                array[i]=0;
             }
             return x;
         }
-    )
+    )*/
+    var array=Array.apply(null, Array(n)).map(Number.prototype.valueOf,a);
     return array;
-}
-
-function ex_10_I(a,n)
-{
-    array=[];
-    for(i=0;i<n;i++)
-    {
-        array[i]=a;
-    }
-    return array;
-}
-
-// Spazio: O(n) 
-// Tempo: O(n)
-function ex_10_R(a,n)
-{
-    array=[];
-    return incoda(array,a,n);
-}
-
-function incoda(array,a,n)
-{
-    if(n==0)
-        return array;
-    else
-    {
-        array.push(a);
-        return incoda(array,a,n-1);
-    }
 }
 
 /*
