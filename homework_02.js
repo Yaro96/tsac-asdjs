@@ -204,6 +204,22 @@ Data una lista di interi A, si riordini gli elementi della lista in modo tale ch
 dispari precedano nello stesso ordine tutti gli elementi pari.
 */
 
+function ex_11_F(array)
+{
+    array.sort(
+        function(a,b)
+        {
+            if(a%2==1 & b%2==0)
+                return -1;
+            if(a%2==1 & b%2==1)
+                return 0;
+            if(a%2==0 & b%2==1)
+                return 1;
+        }
+    );
+    return array;
+}
+
 // Spazio: O(1) 
 // Tempo: O(n)
 function ex_11_I(array)
