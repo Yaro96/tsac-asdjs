@@ -1,3 +1,5 @@
+//Bershadskyy Yaroslav
+
 function Stack() {
     this.myarray = [];
 }
@@ -19,25 +21,8 @@ Stack.prototype.isEmpty = function() {
     return this.myarray.length == 0;
 }
 
-function decToBin(n)
-{
-    var st=new Stack();
-    while(Math.floor(n/2)!=0)
-    {
-        st.push(n%2);
-        n=Math.floor(n/2);
-    }
-    st.push(n%2);
-    var string='';
-    while(!st.isEmpty())
-    {
-        string+=st.pop().toString();
-    }
-    
-    return string;
-}
-
-function reversePolishNotation(string)
+//Reverse Polish Notation
+function rpn(string)
 {
     var array=string.split(" ");
     var st=new Stack();
