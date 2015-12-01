@@ -162,7 +162,7 @@ LinkedList.prototype.add=function(index,element) {
         var item = new ListItem(element, node.prev, node);
         node.prev = item;
     }else{
-        var last = getNodeR(this.size - 1)
+        var last = getNodeR(this.size - 1);
         var item = new ListItem(element, last, null);
         last.next = item;
     }
