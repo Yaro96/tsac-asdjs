@@ -153,7 +153,7 @@ LinkedList.prototype.getNodeR = function(index)
             return nodeR(node.next, i + 1);
     }
 
-    nodeR(this.head, 0);
+    return nodeR(this.head, 0);
 }
 
 LinkedList.prototype.add=function(index,element) {
