@@ -10,6 +10,11 @@ function ricorsione(array)
     }
 }
 
+function ex_1a(array)
+{
+    return ricorsione(array);
+}
+
 function sumSquares(array,i)
 {
     if(i==array.length)
@@ -29,6 +34,11 @@ function evenElementsSquaresR(array)
     return sumSquares(array,i);
 }
 
+function ex_1b(array)
+{
+    return evenElementsSquaresR(array);
+}
+
 //-------------------------------------------------------------------
 
 function evenElementsSquaresF(array)
@@ -43,6 +53,11 @@ function evenElementsSquaresF(array)
         }
     ,0);
     return tot;
+}
+
+function ex_2(array)
+{
+    return evenElementsSquaresF(array);
 }
 
 //-------------------------------------------------------------------
@@ -96,6 +111,11 @@ function putInTwoStacks(array)
         result+=final.pop();
     }
     return result;
+}
+
+function ex_3(array)
+{
+    return putInTwoStacks(array);
 }
 
 //--------------------------------------------------------------------------
